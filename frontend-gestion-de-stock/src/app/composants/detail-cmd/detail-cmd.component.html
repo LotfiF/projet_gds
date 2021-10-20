@@ -1,0 +1,36 @@
+<div class="row mb-1 mr-0 custom-border">
+    <!--Code Article-->
+    <div class="col-md-3 custom-border-right mb-1 mt-1">
+        <div class="col-md-12 text-center">
+            <h5> {{ ligneCommande.article?.codeArticle }} </h5>
+        </div>
+    </div>
+
+    <!--Designation article-->
+    <div class="col-md-3 custom-border-right mb-1 mt-1">
+        <div class="col-md-12 text-center">
+            <h5>{{ ligneCommande.article?.designation }} </h5>
+        </div>
+    </div>
+
+    <!--Quantité-->
+    <div class="col-md-2 custom-border-right mb-1 mt-1">
+        <div class="col-md-12 text-center">
+            <h5>{{ ligneCommande.quantite }}</h5>
+        </div>
+    </div>
+
+    <!--Prix unitaire-->
+    <div class="col-md-2 custom-border-right mb-1 mt-1">
+        <div class="col-md-12 text-center">
+            <h5>{{ ligneCommande.prixUnitaire }} €</h5>
+        </div>
+    </div>
+
+    <!--Prix total-->
+    <div class="col-md-2 custom-border-right mb-1 mt-1">
+        <div class="col-md-12 text-center">
+            <h5>{{ ligneCommande.prixUnitaire && ligneCommande.quantite ? +ligneCommande.prixUnitaire * +ligneCommande.quantite : '' }} €</h5>
+        </div>
+    </div>
+</div>

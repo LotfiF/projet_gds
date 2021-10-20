@@ -1,0 +1,96 @@
+<div class="row mb-1 mr-0 custom-border">
+    <div class="col-md-1 custom-border-right p-1 text-center mb-1 mt-1">
+        <img src="assets/product.png" width="100px" height="100px">
+    </div>
+    <!--Detail article-->
+    <div class="col-md-5 custom-border-right mb-1 mt-1">
+        <div class="col">
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-info-circle blue-color"></i></div>
+                <div class="col-md-11">{{utilisateurDto.nom}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-info-circle blue-color"></i></div>
+                <div class="col-md-11">{{utilisateurDto.prenom}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><i class="fa fa-calendar blue-color"></i></div>
+                <div class="col-md-11">{{utilisateurDto.dateDeNaissance | date:'longDate'}} </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-at blue-color"></i></div>
+                <div class="col-md-11">{{utilisateurDto.mail}}</div>
+            </div>
+        </div>
+    </div>
+    <!--Detail category-->
+    <div class="col-md-3 custom-border-right mb-1 mt-1">
+        <div class="col">
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-home blue-color"></i></div>
+                <div class="col-md-10">{{ utilisateurDto.adresse?.adresse1 }}&nbsp;{{ utilisateurDto.adresse?.adresse2
+                    }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-map-marker-alt blue-color"></i></div>
+                <div class="col-md-10">{{ utilisateurDto.adresse?.codePostale }}&nbsp;{{ utilisateurDto.adresse?.ville
+                    }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><i class="fas fa-globe-europe blue-color"></i></div>
+                <div class="col-md-10">{{ utilisateurDto.adresse?.pays }}</div>
+            </div>
+        </div>
+    </div>
+    <!--Buttons actions-->
+    <div class="col-md-3 p-3">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link" (click)="modifierUtilisateur(utilisateurDto.id)">
+                    <i class="fas fa-pencil-alt"></i>&nbsp;Modifier
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link text-danger" data-toggle="modal"
+                    [attr.data-target]="'#modalDeleteUtilisateur' + utilisateurDto.id">
+                    <i class="fas fa-trash-alt"></i>&nbsp;Supprimer
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link">
+                    <i class="far fa-list-alt"></i>&nbsp;Detailes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeleteUtilisateur{{ utilisateurDto.id }}" data-backdrop="static"
+        data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirmation de suppression</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Voulez-vous supprimer ce User ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-ban"></i> Annuler</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        (click)="confirmerEtSupprimerUtilisateur()">
+                        <i class="fas fa-trash-alt"></i> Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

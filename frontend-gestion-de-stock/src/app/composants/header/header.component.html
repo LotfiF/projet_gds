@@ -1,0 +1,31 @@
+<div class='row'>
+    <div class="col-md-7">
+        <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" placeholder="Search.." aria-label="Username"
+                aria-describedby="addon-wrapping">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-7 text-right p-2">
+                <span>Bonjour <b>{{ connectedUser.nom }}</b></span>
+            </div>
+            <div class="col-md-2 text-left">
+                <a href="javascript:void(0);" [routerLink]="['profil']">
+                    <img src="assets/profile.jpg" class="rounded-circle" width="45px" height="45px"/>
+                </a>
+            </div>
+            <div class="col-md-2 p-2 text-right">
+                <button type="button" (click)="deconnect()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
