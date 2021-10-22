@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiConfiguration {
-  rootUrl: string = 'https://8081-kumquat-minnow-j99trmuq.ws-eu17.gitpod.io';
+  rootUrl: string = 'https://8081-coffee-echidna-37t0zian.ws-eu17.gitpod.io';
 }
 
 export interface ApiConfigurationInterface {

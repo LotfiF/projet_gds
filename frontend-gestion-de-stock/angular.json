@@ -83,10 +83,7 @@
               "browserTarget": "frontend-gestion-de-stock:build:development"
             }
           },
-          "defaultConfiguration": "development",
-          "options": {
-            "disableHostCheck": true
-          }
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
