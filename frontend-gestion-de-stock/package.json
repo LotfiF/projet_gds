@@ -11,8 +11,8 @@
     "e2e": "ng e2e",
     "start:local": "npm run gs-api && ng serve -- --proxyConfig=proxy.conf.json",
     "gs-api": "npm run gs-api:create-dist && npm run gs-api:download && npm run gs-api:extract && npm run gs-api:swagger-gen",
-    "gs-api:create-dist": "mkdir -p tools/swagger/dist && mkdir -p tools/swagger/src",
-    "gs-api:download": "cp /Users/bouali/personal/courses/gestion\\ de\\ stock/resources/gestiondestock/target/gestiondestock-0.0.1-SNAPSHOT.jar ./tools/swagger/dist && cp /Users/bouali/personal/courses/gestion\\ de\\ stock/resources/gestiondestock/target/swagger.json ./tools/swagger/src",
+    "gs-api:create-dist": "mkdir -p frontend-gestion-de-stock/tools/swagger/dist && mkdir -p frontend-gestion-de-stock/tools/swagger/src",
+    "gs-api:download": "cp gestiondestock/target/gestiondestock-0.0.1-SNAPSHOT.jar frontend-gestion-de-stock/tools/swagger/dist && cp gestiondestock/target/swagger.json  frontend-gestion-de-stock/tools/swagger/src",
     "gs-api:extract": "node ./tools/swagger/src/swagger.json 0.0.1-SNAPSHOT",
     "gs-api:swagger-gen": "./node_modules/.bin/ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
   },
