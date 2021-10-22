@@ -1,7 +1,6 @@
 package fr.esic.gestiondestock;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -90,10 +89,6 @@ public class GestionDeStockApplication implements CommandLineRunner {
 		categoryRepository.save(category1);
 		articleRepository.save(article1);
 
-		
-//		Stream.of(u1, u2, u3, u4).forEach(u-> {
-//			userRepo.save(u);	
-//		});
 	}
 
 }

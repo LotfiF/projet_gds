@@ -121,7 +121,7 @@
 							<locations>
 								<location>fr.esic.gestiondestock.controller.api</location>
 							</locations>
-							<basePath>http://localhost:8081</basePath>
+							<basePath>https://8081-coffee-echidna-37t0zian.ws-eu17.gitpod.io</basePath>
 							<info>
 								<title>Swagger Api Documentation for Gestion de stock application</title>
 								<version>${project.version}</version>
@@ -129,7 +129,7 @@
 								<contact>
 									<email>lotfi.fathi@gmail.com</email>
 									<name>Lotfi FATHI</name>
-									<url>https://lotfif.github.io/portfolio/</url>
+									<url>https://github.com/LotfiF</url>
 								</contact>
 							</info>
 							<outputPath>${project.build.directory}</outputPath>
