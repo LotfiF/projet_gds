@@ -1,16 +1,16 @@
 image:
   file: .gitpod.dockerfile
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-tasks:
-  - before: cd frontend-gestion-de-stock 
-    init: npm install
-    command: npm start
-  - before: cd gestiondestock 
-    command: mvn spring-boot:run # use "mvn clean install" to update packages 
+# tasks:
+#   - before: cd frontend-gestion-de-stock 
+#     init: npm install
+#     command: npm start
+#   - before: cd gestiondestock 
+#     command: mvn spring-boot:run # use "mvn clean install" to update packages 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
-  - port: 8081
+  - port: 3000
     onOpen: open-browser
 
 
