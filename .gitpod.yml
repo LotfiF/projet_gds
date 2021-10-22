@@ -2,10 +2,11 @@ image:
   file: .gitpod.dockerfile
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: npm install
+  - before: cd frontend-gestion-de-stock 
+    init: npm install
     command: npm start
-  - init: ./mvnw package -DskipTests
-    command: java -jar target/*.jar
+  - before: cd gestiondestock 
+    init: mvn clean install
     
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
