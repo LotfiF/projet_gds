@@ -1,4 +1,4 @@
-# proje: GESTION_DE_STOCK
+# projet: GESTION_DE_STOCK
 
 
 _Backend_:
