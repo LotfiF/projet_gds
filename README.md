@@ -1,4 +1,4 @@
-# projet_gds
+# projet_GESTION_DE_STOCK
 
 
 _Backend_:
