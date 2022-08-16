@@ -44,7 +44,7 @@ public interface CommandeFournisseurApi {
 	@GetMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/{idCommandeFournisseur}")
 	CommandeFournisseurDto findById(@PathVariable("idCommandeFournisseur") Integer id);
 	
-	@GetMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/{codeCommandeFournisseur}")
+	@GetMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/filter/{codeCommandeFournisseur}")
 	CommandeFournisseurDto findByCode(@PathVariable("codeCommandeFournisseur") String code);
 	
 	@GetMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/all")

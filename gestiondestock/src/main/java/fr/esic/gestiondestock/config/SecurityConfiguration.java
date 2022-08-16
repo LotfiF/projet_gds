@@ -71,7 +71,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://4200-coffee-echidna-37t0zian.ws-eu17.gitpod.io"));
+        configuration.setAllowedOrigins(Arrays.asList("https://4200-lotfif-projetgds-sq2nzo5cznh.ws-eu59.gitpod.io"));
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Accept", "Origin", "Content-Type"));

@@ -22,7 +22,7 @@ public interface VenteApi {
 	  @GetMapping(VENTE_ENDPOINT + "/{idVente}")
 	  VenteDto findById(@PathVariable("idVente") Integer id);
 	  
-	  @GetMapping(VENTE_ENDPOINT + "/{codeVente}")
+	  @GetMapping(VENTE_ENDPOINT + "/filter/{codeVente}")
 	  VenteDto findByCode(@PathVariable("codeVente") String code);
 	  
 	  @GetMapping(VENTE_ENDPOINT + "/all")

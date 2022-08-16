@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -26,4 +27,8 @@ public class Vente extends AbstractEntity {
 
     @Column(name = "identreprise")
     private Integer idEntreprise;
+
+    // @OneToMany(mappedBy = "vente")
+    // private List<LigneVente> ligneVentes;
+
 }

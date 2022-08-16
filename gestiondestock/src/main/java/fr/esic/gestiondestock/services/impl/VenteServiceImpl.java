@@ -63,14 +63,16 @@ public class VenteServiceImpl implements VenteService {
 		}
 		
 		List<String> articleErrors = new ArrayList<>();
-		
-		dto.getLigneVente().forEach(ligneVenteDto -> {
-			Optional<Article> article = articleRepository.findById(ligneVenteDto.getArticle().getId());
-			if (article.isEmpty()) {
-				articleErrors.add("Aucun article avec l'id" + ligneVenteDto.getArticle().getId() + "n'a été trouvé dans la BDD");
-			}
-		});
-		
+		System.out.println(dto);
+		if (dto.getLigneVente() != null) {
+			dto.getLigneVente().forEach(ligneVenteDto -> {
+				Optional<Article> article = articleRepository.findById(ligneVenteDto.getArticle().getId());
+				if (article.isEmpty()) {
+					articleErrors.add("Aucun article avec l'id" + ligneVenteDto.getArticle().getId() + "n'a été trouvé dans la BDD");
+				}
+			});
+		}
+			
 		if (!articleErrors.isEmpty()) {
 			log.error("one or more articles were not found in DB", errors);
 			throw new InvalidEntityException("Un ou plusieurs articles n'ont pas été trouvé dans la BDD", 
@@ -78,13 +80,14 @@ public class VenteServiceImpl implements VenteService {
 		}
 		
 		Vente savedVente = venteRepository.save(VenteDto.toEntity(dto));
-		
-		dto.getLigneVente().forEach(ligneVenteDto -> {
-			LigneVente ligneVente = LigneVenteDto.toEntity(ligneVenteDto);
-			ligneVente.setVente(savedVente);
-			ligneVenteRepository.save(ligneVente);
-			updateMvtStk(ligneVente);
-		});
+		if (dto.getLigneVente() != null) {
+			dto.getLigneVente().forEach(ligneVenteDto -> {
+				LigneVente ligneVente = LigneVenteDto.toEntity(ligneVenteDto);
+				ligneVente.setVente(savedVente);
+				ligneVenteRepository.save(ligneVente);
+				updateMvtStk(ligneVente);
+			});
+		}
 		return VenteDto.fromEntity(savedVente);
 	}
 

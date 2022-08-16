@@ -184,7 +184,7 @@ public class CommandeFournisseurServiceImpl implements CommandeFournisseurServic
 		
 		checkIdCommande(idCommande);
 		
-		if (StringUtils.hasLength(String.valueOf(etatCommande))){
+		if (!StringUtils.hasLength(String.valueOf(etatCommande))){
 			log.error("L'état de la Commande is NULL");
 			throw new InvalidOperationException(
 					"Impossible de modifier l'état de la commande avec un etat NULL", 
@@ -260,7 +260,7 @@ public class CommandeFournisseurServiceImpl implements CommandeFournisseurServic
 		Article article = findArticle(idArticle);
 		
 		List<String> errors = ArticleValidator.validate(ArticleDto.fromEntity(article));
-		if (errors.isEmpty()) {
+		if (!errors.isEmpty()) {
 			throw new InvalidEntityException("", ErrorCodes.ARTICLE_NOT_VALID, errors);
 		}
 		

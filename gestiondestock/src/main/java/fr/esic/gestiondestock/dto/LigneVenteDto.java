@@ -5,12 +5,15 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Builder
 public class LigneVenteDto {
 
     private Integer id;
 
+    //@JsonIgnore
     private VenteDto vente;
     
     private ArticleDto article;

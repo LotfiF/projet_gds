@@ -60,7 +60,7 @@ public interface CommandeClientApi {
 	@GetMapping(APP_ROOT + "/commandesclients/{idCommandeClient}")
 	ResponseEntity<CommandeClientDto> findById(@PathVariable("idCommandeClient") Integer id);
 	
-	@GetMapping(APP_ROOT + "/commandesclients/{codeCommandeClient}")
+	@GetMapping(APP_ROOT + "/commandesclients/filter/{codeCommandeClient}")
 	ResponseEntity<CommandeClientDto> findByCode(@PathVariable("codeCommandeClient") String code);
 	
 	@GetMapping(APP_ROOT + "/commandesclients/all")
